@@ -1,0 +1,37 @@
+<html>
+	<head>
+		<title>This is the worst hack-job I've ever done</title>
+	</head>
+	<body>
+		<p>Something something svg...</p>
+		<object id='roo' data='svg.svg' type='image/svg+xml'></object>
+		<script> 
+function getSvg() { 
+	console.log('hello')
+		var oldObj = document.getElementById('roo')
+		var newObj = document.createElement('object')
+		newObj.data = 'svg.svg'
+		newObj.type = 'image/svg+xml'
+		newObj.id = 'roo'
+		oldObj.replaceWith(newObj)
+} 
+
+function draw() { 
+	var j = 50 
+
+		for (var a= [], i = 0; i < 8192; i++) { 
+			a[i] = i % j ? 0 : j 
+		} 
+	//var last = document.body.appendChild(getSvg()) 
+
+	var f = function() { 
+		getSvg()
+	} 
+
+	setInterval(f, 1000) 
+} 
+
+draw()
+		</script>
+	</body>
+</html>

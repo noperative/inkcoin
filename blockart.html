@@ -1,0 +1,80 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+		<link rel="stylesheet" href="/resources/demos/style.css">
+		<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+		<script> 
+
+
+			function addShape() {
+				var fill = $("#fill").val()
+				var stroke = $("#stroke").val()
+				var path = $("#path").val()
+				// addShape(path, fill, stroke)
+				
+				var callback = function (data) {
+					console.log(data)
+					var svgString = data["svg-string"]
+					$(data["svg-string"]).insertAfter($("path").last())					
+				}
+				console.log("fill")
+				var req = new XMLHttpRequest();
+				req.responseType = 'json'
+				req.onload = function() { 
+					if (req.status == 200) {
+						callback(req.response);
+					} else {
+						console.log("failed to add shape")
+					}						
+				};
+				req.open("POST", "http://localhost:8888", true); // true for asynchronous 
+				req.setRequestHeader("Content-Type", "application/json;charset=UTF-8")
+
+				var params = JSON.stringify({ 
+						path: path, 
+						fill: fill,
+						stroke: stroke
+					})
+				req.send(params);
+
+			};				
+
+			function hideHistory() {
+				var num = $('#history').val()
+				var maxLen = $("path").length
+				if (isNaN(parseInt(num)) && num > 0 && num < maxLen) {
+					console.log("Not valid number")
+				} else {
+					$("path").each(function(index, element) {
+						if (index <= num) {
+							$(element).removeClass("hide").addClass("show").show()
+						} else if (index > num) {
+							$(element).removeClass("show").addClass("hide").hide()
+						}
+					})
+				}
+			}
+
+		</script>
+	</head>
+		<body>
+
+		<div id="blockchain-container">
+				<svg xmlns="http://www.w3.org/2000/svg" width=1024 height=1024 version="1.1">
+					{{template "paths.html"}}
+				</svg>
+		</div>
+
+		<input id="fill" value="Fill"></input>
+		<input id="stroke" value="Stroke"></input>
+		<input id="path" value="Path"></input>
+		<button id="addButton" type="button" onclick="addShape()">Add dis shape</button>
+
+		<div>
+			<input id="history" value="Type in a number and i'll show you the world up until that point"></input>
+			<button id="histButton" type="button" onclick="hideHistory()">See history</button>
+		</div>
+		
+		</body>
+</html>

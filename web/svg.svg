@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="900" version="1.1">
+<path d="M850 850 L850 50 50 50 50 850 850 850 M 750 750 150 750 150 150 750 150 750 750" stroke="darkgrey" fill="darkgrey" fill-rule="evenodd"/>
+<path d="M885 885 L885 15 15 15 15 885 885 885 M 860 860 40 860 40 40 860 40 860 860" stroke="black" fill="#232323" fill-rule="evenodd"/>
+<path d="M550 674 L700 449 550 224 350 224 200 449 350 674 550 674 M540 654 L678 449 540 244 360 244 222 449 360 654 540 654" stroke="darkgrey" fill="#666666" fill-rule="evenodd"/>
+<circle cx="449" cy="449" r="165" stroke="black" fill="transparent"/>
+<circle cx="449" cy="449" r="170" stroke="black" fill="transparent"/>
+<circle cx="449" cy="449" r="175" stroke="black" fill="transparent"/>
+<circle cx="449" cy="449" r="55" stroke="black" fill="transparent"/>
+<circle cx="449" cy="449" r="50" stroke="black" fill="#555555"/>
+<circle cx="519" cy="519" r="25" stroke="#999999" fill="#999999"/>
+<circle cx="519" cy="379" r="25" stroke="#999999" fill="#999999"/>
+<circle cx="379" cy="519" r="25" stroke="#999999" fill="#999999"/>                                                                                                                                                             
+<circle cx="379" cy="379" r="25" stroke="#999999" fill="#999999"/>
+<path d="M725 725 L725 650 650 725 Z" stroke="#222222" fill="222222" fill-rule="evenodd"/>
+<path d="M175 725 L175 650 250 725 Z" stroke="#222222" fill="222222" fill-rule="evenodd"/>
+<path d="M175 175 L175 250 250 175 Z" stroke="#222222" fill="222222" fill-rule="evenodd"/>
+<path d="M725 175 L650 175 725 250 Z" stroke="#222222" fill="222222" fill-rule="evenodd"/>
+<path d="M449 600 L439 540 449 520 459 540 Z" stroke="#222222" fill="222222" fill-rule="evenodd"/>
+<path d="M449 300 L439 360 449 380 459 360 Z" stroke="#222222" fill="222222" fill-rule="evenodd"/>
+<path d="M300 449 L360 439 380 449 360 459 Z" stroke="#222222" fill="222222" fill-rule="evenodd"/>
+<path d="M600 449 L540 439 520 449 540 459 Z" stroke="#222222" fill="222222" fill-rule="evenodd"/>
+</svg>
